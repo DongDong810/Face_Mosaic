@@ -1,0 +1,11 @@
+# Data
+data/
+
+# Ckpt
+result/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Other files
+coco_eval/
