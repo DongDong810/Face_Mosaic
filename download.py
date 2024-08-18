@@ -19,7 +19,7 @@ def extract_zip(zip_path, extract_path):
 
 # Settings (WIDER FACE Dataset)
 
-urls = ['https://huggingface.co/datasets/CUHK-CSE/wider_face/resolve/main/data/WIDER_train.zip'
+urls = ['https://huggingface.co/datasets/CUHK-CSE/wider_face/resolve/main/data/WIDER_train.zip',
         'https://huggingface.co/datasets/CUHK-CSE/wider_face/resolve/main/data/WIDER_val.zip',
         'https://huggingface.co/datasets/CUHK-CSE/wider_face/resolve/main/data/WIDER_test.zip',
         'http://shuoyang1213.me/WIDERFACE/support/bbx_annotation/wider_face_split.zip']
@@ -35,5 +35,5 @@ extract_paths = ['data/widerface/',
                  'data/widerface/']
 
 for i in range(4):
-    # download_file(urls[i], zip_paths[i])
+    download_file(urls[i], zip_paths[i])
     extract_zip(zip_paths[i], extract_paths[i])
