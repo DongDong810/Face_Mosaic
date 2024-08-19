@@ -1,0 +1,25 @@
+# Project
+project_name: face_mosaic
+exp_name: 'mask_rcnn'
+
+# Model
+backbone: 'mask_rcnn_R_101_FPN_3x'
+batch: 8
+lr: 0.0025
+iter: 10000
+
+
+
+# Path
+path:
+  train: '/workspace/face_mosaic/data/widerface/train/images'
+  val: '/workspace/face_mosaic/data/widerface/val/images'
+  test: '/workspace/face_mosaic/data/widerface/test/images'
+  annot: '/workspace/face_mosaic/data/widerface/annotations/'
+  output_root: '/workspace/face_mosaic/ckpts'
+  load_ckpt: ~
+  
+# Logger
+wandb:
+  use_wandb: False
+  
