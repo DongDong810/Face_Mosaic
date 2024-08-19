@@ -21,7 +21,7 @@ from omegaconf import OmegaConf
 
 # Configs
 cfg = get_cfg()
-cfg_default = OmegaConf.load("default.yaml")
+cfg_default = OmegaConf.load("/home/minwoo/yai/Face_Mosaic/default.yaml") # Change to your own path!
 for k, v in cfg_default.items():
     cfg[k] = v
 cfg.merge_from_file(model_zoo.get_config_file(f"COCO-InstanceSegmentation/{cfg.backbone}.yaml"))
