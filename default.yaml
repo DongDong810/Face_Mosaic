@@ -10,13 +10,13 @@ iter: 10000
 
 
 
-# Path
+# Path (Change to your own paths!)
 path:
-  train: '/workspace/face_mosaic/data/widerface/train/images'
-  val: '/workspace/face_mosaic/data/widerface/val/images'
-  test: '/workspace/face_mosaic/data/widerface/test/images'
-  annot: '/workspace/face_mosaic/data/widerface/annotations/'
-  output_root: '/workspace/face_mosaic/ckpts'
+  train: 'yai/Face_Mosaic/data/widerface/WIDER_train/images'
+  val: 'yai/Face_Mosaic/data/widerface/WIDER_val/images'
+  test: 'yai/Face_Mosaic/data/widerface/WIDER_test/images'
+  annot: 'yai/Face_Mosaic/data/widerface/wider_face_split'
+  output_root: 'ckpts'
   load_ckpt: ~
   
 # Logger

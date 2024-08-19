@@ -21,7 +21,7 @@ from omegaconf import OmegaConf
 
 # Configs
 cfg = get_cfg()
-cfg_default = OmegaConf.load("default.yaml")
+cfg_default = OmegaConf.load("/home/minwoo/yai/Face_Mosaic/default.yaml") # Change to your own path!
 for k, v in cfg_default.items():
     cfg[k] = v
 
@@ -55,7 +55,7 @@ cfg.SOLVER.STEPS = []         # the checkpoints (number of iterations) at which 
 cfg.TEST.EVAL_PERIOD = 500
 
 current_time = time.strftime("%Y%m%d_%H%M")
-cfg.OUTPUT_DIR = os.path.join(cfg.output_root, f"{current_time}_{cfg.backbone}")
+cfg.OUTPUT_DIR = os.path.join(cfg.path.output_root, f"{current_time}_{cfg.backbone}")
 
 # Train
 os.makedirs(cfg.OUTPUT_DIR, exist_ok=True)

@@ -4,7 +4,7 @@ from detectron2.structures import BoxMode
 
 # Only for train, val dataset
 def get_face_dicts(img_dir, annot_dir, phase) -> list[dict]:
-    annot_file = os.path.join(annot_dir, f"{phase}.txt")
+    annot_file = os.path.join(annot_dir, f"wider_face_{phase}_bbx_gt.txt")
     with open (annot_file, 'r') as f:
         lines = f.readlines()
 
