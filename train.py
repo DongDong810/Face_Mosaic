@@ -24,6 +24,7 @@ cfg = get_cfg()
 cfg_default = OmegaConf.load("default.yaml")
 for k, v in cfg_default.items():
     cfg[k] = v
+cfg.merge_from_file(model_zoo.get_config_file(f"COCO-InstanceSegmentation/{cfg.backbone}.yaml"))
 
 # Register dataset
 # 1) train
@@ -35,8 +36,6 @@ DatasetCatalog.register("face_val", lambda p='val': get_face_dicts(cfg.path.val,
 MetadataCatalog.get("face_val").set(thing_classes=["face"])
 
 # Settings for training
-cfg.merge_from_file(model_zoo.get_config_file(f"COCO-InstanceSegmentation/{cfg.backbone}.yaml"))
-
 cfg.DATASETS.TRAIN = ("face_train",)
 cfg.DATASETS.TEST = ("face_val",)
 cfg.DATALOADER.NUM_WORKERS = 4
@@ -55,7 +54,7 @@ cfg.SOLVER.STEPS = []         # the checkpoints (number of iterations) at which 
 cfg.TEST.EVAL_PERIOD = 500
 
 current_time = time.strftime("%Y%m%d_%H%M")
-cfg.OUTPUT_DIR = os.path.join(cfg.output_root, f"{current_time}_{cfg.backbone}")
+cfg.OUTPUT_DIR = os.path.join(cfg.path.output_root, f"{current_time}_{cfg.backbone}")
 
 # Train
 os.makedirs(cfg.OUTPUT_DIR, exist_ok=True)
