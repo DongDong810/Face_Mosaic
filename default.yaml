@@ -8,18 +8,22 @@ batch: 8
 lr: 0.0025
 iter: 10000
 
-
-
 # Path
+# 1. train: train dataset path
+# 2. val: val dataset path
+# 3. test: test dataset path
+# 4. annot: annotation file path
+# 5. output_root: output root directory
+# 6. load_ckpt: load checkpoint path
 path:
   train: '/workspace/face_mosaic/data/widerface/train/images'
   val: '/workspace/face_mosaic/data/widerface/val/images'
   test: '/workspace/face_mosaic/data/widerface/test/images'
-  annot: '/workspace/face_mosaic/data/widerface/annotations/'
-  output_root: '/workspace/face_mosaic/ckpts'
-  load_ckpt: ~
+  annot: '/workspace/face_mosaic/data/widerface/annotations'
+  output_root: '/workspace/face_mosaic/result'
+  load_ckpt: '/workspace/face_mosaic/result/20240816_1408_mask_rcnn_R_101_FPN_3x'                     
   
 # Logger
 wandb:
   use_wandb: False
-  
+  interval: 100

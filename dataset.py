@@ -3,6 +3,7 @@ import os, cv2
 from detectron2.structures import BoxMode
 
 # Only for train, val dataset
+# phase = ["train", "val"]
 def get_face_dicts(img_dir, annot_dir, phase) -> list[dict]:
     annot_file = os.path.join(annot_dir, f"{phase}.txt")
     with open (annot_file, 'r') as f:
