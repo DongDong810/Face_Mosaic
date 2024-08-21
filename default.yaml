@@ -4,11 +4,11 @@ exp_name: 'mask_rcnn'
 
 # Model
 backbone: 'mask_rcnn_R_101_FPN_3x'
-batch: 8
+batch: 16
 lr: 0.0025
-iter: 10000
+iter: 5000
 
-# Path
+# Path (change the path to your own path)
 # 1. train: train dataset path
 # 2. val: val dataset path
 # 3. test: test dataset path
@@ -27,3 +27,5 @@ path:
 wandb:
   use_wandb: False
   interval: 100
+  log_dir: './wandb_logs'
+  
